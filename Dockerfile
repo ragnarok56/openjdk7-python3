@@ -124,14 +124,3 @@ RUN set -ex; \
         \) -exec rm -rf '{}' +; \
     rm -f get-pip.py
 
-RUN mkdir -p /usr/src/app \
-  && mkdir -p /usr/src/log
-
-WORKDIR /usr/src/app
-
-COPY requirements.txt /usr/src/app
-
-RUN set -ex \
-  && pip install --no-cache-dir -r requirements.txt
-
-COPY . /usr/src/app
